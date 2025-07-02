@@ -33,6 +33,7 @@ export const useTreeStore = defineStore("tree", () => {
         LOCAL_STORAGE_TREE_DATA_KEY,
         JSON.stringify(dataToSave)
       );
+      updateSelectedNode();
     } catch (e) {
       console.log("Error saving to local storage:", e);
     }
@@ -112,6 +113,13 @@ export const useTreeStore = defineStore("tree", () => {
     }
     selectedNode.value = node;
   };
+
+  function updateSelectedNode(): void {
+    let node = treeNodes.value.find((el: IGoJsNode) => {
+      return selectedNode.value && selectedNode.value.key == el.key;
+    });
+    if (node) selectedNode.value = node;
+  }
 
   const createDefaultNode = (
     parentNode: IGoJsNode,

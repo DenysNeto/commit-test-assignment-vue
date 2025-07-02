@@ -32,7 +32,7 @@ export function useUndoRedoManager(
     isPerformingUndoRedo.value = true;
     nodesRef.value = state.treeNodes;
     linksRef.value = state.treeLinks;
-
+    localStorageSaveAction();
     nextTick(() => {
       isPerformingUndoRedo.value = false;
     });
