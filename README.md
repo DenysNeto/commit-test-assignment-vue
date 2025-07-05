@@ -33,3 +33,7 @@ For the import and export task, I didn’t convert the object into a more readab
  - Undo/Redo manager 
  - Import/Export  
  - Change color of node + annotations
+
+
+
+P.S I have walked through my assignment and found that instead of my functions save/load localstorage i could use pinia plugin  ```pinia-plugin-persistedstate```. I didn't chane it in code because i found this unfair but decided to mention that i know it.
